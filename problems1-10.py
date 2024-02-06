@@ -11,3 +11,10 @@
 # print(sum(fib for fib in fibonacci(33) if fib % 2 == 0))
 # 3. Largest prime factor
 # print(max(i for i in range(1, int(600851475143**0.5)) if 600851475143 % i == 0 and all(i % j != 0 for j in range(2, int(i**0.5)))))
+# 4. Largest palindrome product
+# print(max(x*y for x in range(999, 99, -1) for y in range(999, 99, -1) if str(x*y) == str(x*y)[::-1]))
+# 5. Smallest multiple
+# from math import lcm
+# print(lcm(11,12,13,14,15,16,17,18,19,20))
+# 6. Sum square difference
+# print(sum(i for i in range(1, 101))**2 - sum(i**2 for i in range(1, 101)))
