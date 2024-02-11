@@ -1,3 +1,4 @@
+import math
 # 1. Multiples of 3 and 5
 # print(sum(i for i in range(1, 1000) if i % 3 == 0 or i % 5 == 0))
 # 2. Even Fibonacci numbers
@@ -14,7 +15,13 @@
 # 4. Largest palindrome product
 # print(max(x*y for x in range(999, 99, -1) for y in range(999, 99, -1) if str(x*y) == str(x*y)[::-1]))
 # 5. Smallest multiple
-# from math import lcm
-# print(lcm(11,12,13,14,15,16,17,18,19,20))
+# print(math.lcm(11,12,13,14,15,16,17,18,19,20))
 # 6. Sum square difference
 # print(sum(i for i in range(1, 101))**2 - sum(i**2 for i in range(1, 101)))
+# num = 0
+# i = 0
+# while num < 10001:
+#     i += 1
+#     num += int(i > 1 and all(i % j != 0 for j in range(2, int(math.sqrt(i)) + 1)))
+# print(i)
+# 8. Largest product in a series
