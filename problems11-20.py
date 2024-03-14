@@ -156,3 +156,16 @@ from functools import reduce
 # 20849603980134001723930671666823555245252804609722,
 # 53503534226472524250874054075591789781264330331690]
 # print(str(sum(num))[:10])
+# 14. Longest Collatz Sequence
+m = [0, 0, {}]
+def rec(s, n, i):
+    i, n = (m[2][n]-1+i, 1) if n in m[2] else (i, n)
+    if n == 1:
+        m[0], m[1], m[2][s] = (i, s, i) if i > m[0] else (m[0], m[1], i)
+    else:
+        rec(s, n//2 if n % 2 == 0 else 3*n+1, i+1)
+
+[rec(i, i, 1) for i in range(2, 1_000_000)]
+
+    
+print(m[1] == 837799)
