@@ -169,6 +169,8 @@ from functools import reduce
 
 # print(m[1] == 837799)
 # 15. Lattice Paths
-def fac(n):
-    return n*fac(n-1) if n != 0 else 1
-print(int(fac(2*(20))/(fac(20)**2)))
+# def fac(n):
+#     return n*fac(n-1) if n != 0 else 1
+# print(int(fac(2*(20))/(fac(20)**2)))
+# 16. Power Digit Sum
+print(sum(int(s) for s in str(2**1000)))
