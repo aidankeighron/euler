@@ -173,4 +173,41 @@ from functools import reduce
 #     return n*fac(n-1) if n != 0 else 1
 # print(int(fac(2*(20))/(fac(20)**2)))
 # 16. Power Digit Sum
-print(sum(int(s) for s in str(2**1000)))
+# print(sum(int(s) for s in str(2**1000)))
+# 17. Number Letter Counts
+single = ["", "one", "two", "three", "four", "five", "six", "seven", "eight", "nine"]
+double = ["ten", "eleven", "twelve", "thirteen", "fourteen", "fifteen", "sixteen", "seventeen", "eighteen", "nineteen"]
+tens = ["", "ten", "twenty", "thirty", "forty", "fifty", "sixty", "seventy", "eighty", "ninety"]
+powers = ["hundred", "thousand"]
+
+total = 0
+for i in range(1, 1001):
+    if i < 10:
+        total += len(single[i])
+        # print(single[i])
+    elif i < 20:
+        total += len(double[i-10])
+        # print(double[i-10])
+    elif i < 100:
+        total += len(tens[i//10]) + len(single[i%10])
+        # print(f"{tens[i//10]} {single[i%10]}")
+    elif i < 1000:
+        total += len(single[i//100]) + len(powers[0])
+        s = f"{single[i//100]} {powers[0]}"
+        doubles = i-(i//100)*100
+        if doubles == 0:
+            ...
+        elif doubles < 10:
+            total += len("and") + len(single[doubles])
+            s += f" and {single[doubles]}"
+        elif doubles < 20:
+            total += len("and") + len(double[doubles-10])
+            s += f" and {double[doubles-10]}"
+        elif doubles < 100:
+            total += len("and") + len(tens[doubles//10]) + len(single[doubles%10])
+            s += f" and {tens[doubles//10]} {single[doubles%10]}"
+        # print(s)
+    else:
+        total += len(single[1]) + len(powers[1])
+        # print(single[1] + " " + powers[1])
+print(total)
