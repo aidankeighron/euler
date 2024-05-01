@@ -200,3 +200,5 @@ from functools import reduce
 # 19. Counting Sundays
 # day, sundays = 0, 0
 # print([[(sundays := sundays + ((day := (day + month + (month == 28 and year % 4 == 0 and (year % 100 == 0 and year % 400 != 0)))) % 7 == 0)) for month in [31,28,31,30,31,30,31,31,30,31,30,31]] for year in range(1901,2000+1)][-1][-1])
+# 20. Factorial Digit Sum
+# print(sum(int(d) for d in str(reduce(lambda x, y: int(x)*int(y), [i for i in range(1, 100)], 1))))
