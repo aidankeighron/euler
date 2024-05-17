@@ -1,4 +1,4 @@
-import math, time
+import math, time, itertools
 # 21. Amicable Numbers
 # print(sum(i for i in range(10000+1) if (d := lambda n: sum(j+n//j for j in range(2, int(math.sqrt(n))+1) if n % j == 0)+1)(1) and i == d(d(i)) and i != d(i)))
 # 22. Names Scores
@@ -12,3 +12,5 @@ import math, time
 #             nums[num+other-1] = 0
 # print(sum(nums))
 # print(sum(nums) == 4179871)
+# 24. Lexicographic Permutations
+# print(sorted([''.join(perm) for perm in itertools.permutations(["0","1","2","3","4","5","6","7","8","9"])])[1_000_000-1])
