@@ -14,3 +14,14 @@ import math, time, itertools
 # print(sum(nums) == 4179871)
 # 24. Lexicographic Permutations
 # print(sorted([''.join(perm) for perm in itertools.permutations(["0","1","2","3","4","5","6","7","8","9"])])[1_000_000-1])
+# 25. Fibonacci Number
+# def fib():
+#     a, b = 0, 1
+#     while True:
+#         yield b
+#         a, b = b, a+b
+
+# f, x = enumerate(fib()), 0
+# while len(str(x)) < 1000:
+#     i, x = next(f)
+# print(i+1)
