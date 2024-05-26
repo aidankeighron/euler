@@ -1,4 +1,5 @@
 import math, time, itertools
+from decimal import Decimal, getcontext
 # 21. Amicable Numbers
 # print(sum(i for i in range(10000+1) if (d := lambda n: sum(j+n//j for j in range(2, int(math.sqrt(n))+1) if n % j == 0)+1)(1) and i == d(d(i)) and i != d(i)))
 # 22. Names Scores
@@ -25,3 +26,16 @@ import math, time, itertools
 # while len(str(x)) < 1000:
 #     i, x = next(f)
 # print(i+1)
+# 26. Reciprocal Cycles
+# getcontext().prec = 5000
+# out = 0
+# for i in range(1, 1000+1):
+#     number, j = str(Decimal(1)/Decimal(i))[2:], 3
+#     while j < 1000:
+#         if 3*j > len(number):
+#             break
+#         if number[:j] == number[j:2*j] and number[:j] == number[2*j:3*j]:
+#             out = max(out, j)
+#             break
+#         j += 1
+# print(out+1)
