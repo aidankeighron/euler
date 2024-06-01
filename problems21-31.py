@@ -40,21 +40,23 @@ from decimal import Decimal, getcontext
 #         j += 1
 # print(out+1)
 # 27. Quadratic Primes
-def is_prime(n):
-    if n <= 1:
-        return False
-    for i in range(2, int(n**0.5)+1):
-        if n % i == 0:
-            return False
-    return True
-max_number = 0
-out = 0
-for a in range(-999, 999+1):
-    for b in range(-1000, 1000+1):
-        n = 2
-        while is_prime(int(n**2 + a*n + b)):
-            n += 1
-        if n >= max_number:
-            max_number = n
-            out = a*b
-print(out) 
+# def is_prime(n):
+#     if n <= 1:
+#         return False
+#     for i in range(2, int(n**0.5)+1):
+#         if n % i == 0:
+#             return False
+#     return True
+# max_number = 0
+# out = 0
+# for a in range(-999, 999+1):
+#     for b in range(-1000, 1000+1):
+#         n = 2
+#         while is_prime(int(n**2 + a*n + b)):
+#             n += 1
+#         if n >= max_number:
+#             max_number = n
+#             out = a*b
+# print(out) 
+# 28. Number Spiral Diagonals
+print(int(( 1001 * ( 1001 * ( 4 * 1001 + 3 ) + 8 ) - 9 ) / 6))
