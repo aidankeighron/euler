@@ -59,4 +59,6 @@ from decimal import Decimal, getcontext
 #             out = a*b
 # print(out) 
 # 28. Number Spiral Diagonals
-print(int(( 1001 * ( 1001 * ( 4 * 1001 + 3 ) + 8 ) - 9 ) / 6))
+# print(int(( 1001 * ( 1001 * ( 4 * 1001 + 3 ) + 8 ) - 9 ) / 6))
+# 29. Distinct Powers
+# print(len(set([a**b for a in range(2, 100+1) for b in range(2, 100+1)])))
