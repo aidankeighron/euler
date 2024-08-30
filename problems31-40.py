@@ -1,5 +1,6 @@
 import itertools
-
+from functools import reduce
+import math
 # 31. Coin Sums
 # target = 200
 # coins = [1, 2, 5, 10, 20, 50, 100, 200]
@@ -36,3 +37,23 @@ import itertools
 #                 if len(option) + len(num) + len(str(prod)) == 9 and digits == sorted(list(option) + list(num) + list(str(prod)[:])):
 #                     t.add(prod)
 # print(sum(list(t)))
+# 33. Digit Cancelling Fractions
+numerator = 1
+dominator = 1
+
+for i in range(10, 100):
+    for j in range(10, 100):
+        if i == j or i/j > 1 or str(i)[-1] == '0' and str(j)[-1] == '0':
+            continue
+        for num in str(i):
+            for num1 in str(j):
+                if num == num1:
+                    new_i = int(str(i).replace(str(num), '', 1))
+                    new_j = int(str(j).replace(str(num1), '', 1))
+                    if not new_i or not new_j:
+                        continue
+                    if i/j == new_i/new_j:
+                        numerator *= i
+                        dominator *= j
+
+print(dominator // math.gcd(numerator, dominator))
