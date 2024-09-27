@@ -60,3 +60,22 @@ import math
 # print(dominator // math.gcd(numerator, dominator))
 # 34. Digit Factorials
 # print(sum(i for i in range(3, 100000) if sum(reduce(mul, range(1,int(d)+1), 1) for d in str(i)[:]) == i))
+# 35. Circular Primes
+# def is_prime(n):
+#     for i in range(2, int(n**0.5)+1):
+#         if n % i == 0:
+#             return False
+#     return True
+
+# out = []
+# for i in range(2, 1_000_000+1):
+#     i = str(i)
+#     for _ in range(len(i)):
+#         i = i[-1]+i[:-1]
+#         if not is_prime(int(i)):
+#             break
+#     else:
+#         out.append(i)
+
+# print(len(out))
+
