@@ -78,4 +78,5 @@ import math
 #         out.append(i)
 
 # print(len(out))
-
+# 36. Double-base Palindromes
+# print(sum(i for i in range(1, 1_000_000+1) if (binary := bin(i) or True) and str(i) == str(i)[::-1] and str(binary)[2:] == str(binary)[:1:-1]))
