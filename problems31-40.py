@@ -80,3 +80,38 @@ import math
 # print(len(out))
 # 36. Double-base Palindromes
 # print(sum(i for i in range(1, 1_000_000+1) if (binary := bin(i) or True) and str(i) == str(i)[::-1] and str(binary)[2:] == str(binary)[:1:-1]))
+# 37. Truncatable Primes
+# def is_prime(n):
+#     if n <= 1:
+#         return False
+#     if n == 2:
+#         return True
+#     if n % 2 == 0:
+#         return False
+#     for i in range(3, int(n**0.5) + 1, 2):
+#         if n % i == 0:
+#             return False
+#     return True
+
+
+# def trunc(n):
+#     num = ""
+#     for char in str(n):
+#         num = num + char
+#         if not is_prime(int(num)):
+#             return False
+    
+#     num = ""
+#     for char in str(n)[::-1]:
+#         num = char + num
+#         if not is_prime(int(num)):
+#             return False
+#     return True
+        
+# ans, i = [], 11
+# while len(ans) != 11:
+#     if trunc(i):
+#         ans.append(i)
+#     i += 2
+
+# print(sum(ans))
