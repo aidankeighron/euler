@@ -115,3 +115,24 @@ import math
 #     i += 2
 
 # print(sum(ans))
+# 38. Pandigital Multiples
+def pan(i, n):
+    return ''.join(str(i*dig) for dig in range(1, n+1))
+
+a = ["1","2","3","4","5","6","7","8","9"]
+out = 0
+for i in range(1, 100_000, 2):
+    digits = len(str(i))
+    upper = 10-digits+1
+    for j in range(2, upper):
+        p = pan(i, j)
+        if len(p) > 9:
+            break
+        elif len(p) == 9:
+            for b in a:
+                if b not in p:
+                    break
+            else:
+                out = max(int(p), out)
+
+print(out)
