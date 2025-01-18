@@ -137,19 +137,26 @@ import math
 
 # print(out)
 # 39. Integer Right Triangles
-answer = []
-for i in range(12, 1000+1):
-    print(i)
-    solutions = 0
-    for a in range(1, i-2):
-        for b in range(1, i-a-2):
-            c = i-a-b
-            sides = [a, b, c]
-            sides.sort()
+# answer = []
+# for i in range(12, 1000+1):
+#     print(i)
+#     solutions = 0
+#     for a in range(1, i-2):
+#         for b in range(1, i-a-2):
+#             c = i-a-b
+#             sides = [a, b, c]
+#             sides.sort()
 
-            if sides[0]**2 + sides[1]**2 == sides[2]**2:
-                solutions += 1
-    answer.append([i, solutions])
-print(answer)
-print(max(answer, key=lambda x: x[1]))
-
+#             if sides[0]**2 + sides[1]**2 == sides[2]**2:
+#                 solutions += 1
+#     answer.append([i, solutions])
+# print(answer)
+# print(max(answer, key=lambda x: x[1]))
+# 40. Champernowne's Constant
+fraction = ""
+for i in range(200_000):
+    fraction += str(i)
+mul = 1
+for exp in range(6+1):
+    mul *= int(fraction[10**exp])
+print(mul)
