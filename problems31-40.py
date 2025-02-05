@@ -153,10 +153,30 @@ import math
 # print(answer)
 # print(max(answer, key=lambda x: x[1]))
 # 40. Champernowne's Constant
-fraction = ""
-for i in range(200_000):
-    fraction += str(i)
-mul = 1
-for exp in range(6+1):
-    mul *= int(fraction[10**exp])
-print(mul)
+# fraction = ""
+# for i in range(200_000):
+#     fraction += str(i)
+# mul = 1
+# for exp in range(6+1):
+#     mul *= int(fraction[10**exp])
+# print(mul)
+# 41. Pandigital Prime
+# from itertools import permutations
+# nums = [int(''.join(p)) for p in permutations('1234567')]
+# max_num = 0
+# def is_prime(n):
+#     if n <= 1:
+#         return False
+#     if n == 2:
+#         return True
+#     if n % 2 == 0:
+#         return False
+#     for i in range(3, int(n**0.5) + 1, 2):
+#         if n % i == 0:
+#             return False
+#     return True
+
+# for num in nums:
+#     if is_prime(num):
+#         max_num = max(max_num, num)
+# print(max_num)
